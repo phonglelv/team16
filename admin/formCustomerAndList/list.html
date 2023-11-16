@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/sty.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
+    </script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <section id="menu">
+        <div class="logo">
+            <img src="/admin/images/0115300e9e3ebb5933dad09597e33f76.jpg" alt="">
+            <h2>Bicycle rental management</h2>
+        </div>
+            <div class="items">
+                <li><i><i class="fa-solid fa-chart-pie" style="color: #614b8b;"></i></i><a href="#">Dashboard</a></li>
+                <li><i><i class="fa-solid fa-uikit" style="color: #614b8b;"></i></i><a href="#">Customer</a></li>
+                <li><i><i class="fa-solid fa-th-large" style="color: #614b8b;"></i></i><a href="#">Bike</a></li>
+                <li><i><i class="fa-solid fa-edit" style="color: #614b8b;"></i></i><a href="#">Category</a></li>
+                <li><i><i class="fa-solid fa-cc-visa" style="color: #614b8b;"></i></i><a href="#">Order</a></li>
+                <li><i><i class="fa-solid fa-hamburger" style="color: #614b8b;"></i></i><a href="#">OrderDetails</a></li>
+                <li><i><i class="fa-solid fa-hamburger" style="color: #614b8b;"></i></i><a href="#">Payment</a></li>
+                <li><i><i class="fa-solid fa-chart-line" style="color: #614b8b;"></i></i><a href="#">Report</a></li>
+            </div>
+        </div>
+
+       </section>
+    
+    
+    
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+
+                <div>
+                    <i id="menu-btn" class="fas fa-bars"></i>
+                </div>
+                <div class="search">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="profile">
+                <i class="fa-solid fa-bell"></i>
+                <img src="/admin/images/1.jpg" alt="">
+            </div>
+        </div>
+
+
+
+        <h3 class="i-name">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home Admin</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Customer</li>
+                </ol>
+            </nav>
+            <br>
+            <b class="ml-4">List</b>
+        </h3>
+
+        <div class="values">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <form class="form-inline my-2 my-lg-0  ml-5">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                          </form>
+                    </div>
+
+                    <div class="col-6">
+                        <a href="" class="btn btn-group-vertical btn-outline-info" style="margin-left: 270px;">Thêm khách hàng mới</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="card-body  p-4">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Username</th>
+                                <th scope="col">Fullname</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Password</th>
+                               
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">hai01</th>
+                                <td>Nguyễn văn hãi</td>
+                                <td>092827272</td>
+                                <td>Xe đạp gấp đôi với khung nhôm siêu nhẹ, 21 tốc độ, phù hợp cho cả các địa hình đô
+                                    thị và ngoại ô.</td>
+                                <td>hai@gmail.com</td>
+                                <td>125126</td>
+                              
+                                <td>
+                                    <!-- Button trigger modal -->
+                                    <a type="button" class="btn btn-danger " data-toggle="modal"
+                                        data-target="#staticBackdrop">
+                                        Delete
+                                    </a>
+                                    <a href="" class="btn btn-info ">Edit</a>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="staticBackdrop" data-backdrop="static"
+                                        data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Bạn có chắc chắn muốn xóa Id: <span
+                                                        class="badge badge-danger">XD1</span>
+
+                                                    <p>
+                                                        <span>Lưu ý nếu xóa đi sẽ không thể hoàn tác</span>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-danger">Delete</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                   
+                                </td>
+                            </tr>
+                     
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <script>
+  
+
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.arrow-down').on('click', function(e) {
+                e.preventDefault();
+                $(this).siblings('.dropdown').toggle();
+            });
+        });
+
+
+
+        $('#menu-btn').click(function () {
+            $('#menu').toggleClass("active")
+        })
+    </script>
+</body>
+
+</html>
