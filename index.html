@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bicycle Rental - Thuê xe đạp uy tín - chất lượng</title>
+    <link rel="icon" href="./assets/img/images-logo.png" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
+  <body>
+    <!-- Block Element Modifier -->
+    <div class="app">
+      <header class="header">     
+        <div class="grid">
+          <nav class="header__navbar">
+            <ul class="header__navbar-list">
+              <li class="header__navbar-item-df">
+                <i class="header__navbar-icon icon-color fa-solid fa-envelope"></i>
+                Email: thuexedapgiatot@gmail.com</li>
+              </li>
+              <li class="header__navbar-item-df">
+                <i class="header__navbar-icon icon-color fa-solid fa-phone-volume"></i>
+                Hotline: 0905.56789</li>
+            </ul>
+            <ul class="header__navbar-list">
+              <li class="header__navbar-item">
+                <a href="" class="header__navbar-item-link">
+                  <i class="header__navbar-icon fa-solid fa-question"></i>Trợ giúp</a>
+              </li>
+              <li class="header__navbar-item header__navbar-item--strong header__navbar-item--spearate">Đăng ký</li>
+              <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>
+              <!-- <li class="header__navbar-item header__navbar-user">
+                <img src="" alt="" class="header__navbar-user-img">
+                <span class="header__navbar-user-name">Nam Hoài Trương</span>
+  
+                <ul class="header__navbar-user-menu">
+                  <li class="header__navbar-user-item">
+                    <a href="">Tài khoản của tôi</a>
+                  </li>
+                  <li class="header__navbar-user-item">
+                    <a href="">Địa chỉ của tôi</a>
+                  </li>
+                  <li class="header__navbar-user-item">
+                    <a href="">Đơn mua</a>
+                  </li>
+                  <li class="header__navbar-user-item header__navbar-user-item-separate">
+                    <a href="">Đăng xuất</a>
+                  </li>
+                </ul>
+              </li> -->
+            </ul>
+          </nav>
+
+          <!-- Header with search -->
+          <div class="header__with-search">
+            <div class="header__logo">
+              <a href="/">
+                <img src="./images-logo.png" class="header__logo-img">
+            </a>
+            </div>
+
+            <div class="header__search">
+              <div class="header__search-input-wrap">
+                <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm...">
+
+              </div>
+                <button class="header__search-btn">
+                  <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <div class="header__cart">
+              <div class="header__cart-wrap">
+                <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="app__container">
+
+        <div class="container__header">
+          <ul class="navbar__header-list">
+            <li><a href="#">Trang Chủ</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Giới Thiệu</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+        </ul>
+        </div>
+        
+        <div class="grid user-container">
+            <div class="user-file">
+                <div class="us-ac-img">
+                    <div class="us-img">
+                        <img src="./user.jpg" alt="" class="user-file_img">
+                        <p>Hình ảnh</p>
+                    </div>
+                    <div class="us-account">
+                        <span>Tên tài khoản</span>
+                        <p><i class="icon-us fa-solid fa-pen"></i>  Sửa hồ sơ</p>
+                    </div>
+                </div>
+                <div class="us-list">
+                    <strong><i class="icon-us fa-solid fa-user"></i> Tài khoản của tôi</strong>
+                    <p>Hồ sơ</p>
+                    <p>Địa chỉ</p>
+                    <p>Đổi mật khẩu</p>
+                    <p>Cài đặt thông báo</p>
+                    <strong><i class="icon-us fa-solid fa-bag-shopping"></i> Đơn mua</strong>
+                    </p>
+                    <strong><i class="icon-us fa-solid fa-bell"></i> Thông báo</strong>
+                    <p>Cập nhật đơn hàng</p>
+                    <p>Cập nhật ví</p>
+                    <p>Khuyến mãi</p>
+                </div>
+
+            </div>
+            <div class="user-list">
+                <div class="us-title">
+                    <span>Hồ sơ của tôi</span>
+                    <p>Quản lí thông tin hồ sơ để bảo mật tài khoản</p>
+                </div>
+                <div class="us-form">
+                    <div class="us-form-ip">
+                        <form>
+                            <label for="username">Tên đăng nhập:</label>
+                            <input type="text" id="username" name="username" required>
+                        
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        
+                            <label for="phone">Số điện thoại:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        
+                            <label for="gender">Giới tính:</label>
+                            <select id="gender" name="gender">
+                              <option value="male">Nam</option>
+                              <option value="female">Nữ</option>
+                              <option value="other">Khác</option>
+                            </select>
+                        
+                            <label for="birthdate">Ngày sinh:</label>
+                            <input type="date" id="birthdate" name="birthdate" required>
+                        
+                            <button type="submit" class="btn-f">Lưu</button>
+                          </form>
+                    </div>
+                    <div class="us-img-form">
+                        <img src="./img-x.jpg" alt="" class="us-f-img">
+                        <p>Chọn ảnh</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="grid">
+          <div class="grid__row">
+            <div class="grid-column-2-4">
+              <h3 class="footer__heading">Cho thuê xe đạp Bicycle Rental</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <span href="" class="footer-item__sp"><i class="icon-ft fa-solid fa-location-dot"></i>42 Đặng Thai Mai, Thạc Gián, Thanh Khê, Đà Nẵng</span>
+                </li>
+                <li class="footer-item">
+                  <span href="" class="footer-item__sp"><i class="icon-ft fa-solid fa-location-dot"></i>110 Nguyễn Huy Tưởng, Cẩm Lệ, Đà Nẵng</span>
+
+                </li>
+              </ul>
+            </div>
+            <div class="grid-column-2-4">
+              <h3 class="footer__heading">Về Bicycle Rental</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="" class="footer-item__link">Giới Thiệu Về Bicycle Rental Việt Nam</a>
+                </li>
+                <li class="footer-item">
+                  <a href="" class="footer-item__link">Tuyển Dụng</a>
+                </li>
+                <li class="footer-item">
+                  <a href="" class="footer-item__link">Chính Sách Bảo Mật</a>
+                </li>
+              </ul>
+            </div>
+            <div class="grid-column-2-4">
+              <h3 class="footer__heading">Danh mục</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="" class="footer-item__link">Tuyển Dụng</a>
+                </li>
+                <li class="footer-item">
+                  <a href="" class="footer-item__link">Chính Sách Bảo Mật</a>
+                </li>
+              </ul>
+            </div>
+            <div class="grid-column-2-4">
+              <h3 class="footer__heading">Hỗ trợ</h3>
+              <ul class="footer-list">
+                <li class="footer-item">
+                  <a href="" class="footer-item__link">
+                    
+                    Hỗ trợ thuê xe và thanh toán
+                  </a>
+                </li>
+                <li class="footer-item">
+                  <a href="" class="footer-item__link">
+                    
+                    Quy định đổi trả
+                  </a>
+                </li>
+                <li class="footer-item">
+                  <a href="" class="footer-item__link">
+                    
+                    Chính sách giao nhận xe
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+          <div class="footer__bottom">
+            <div class="grid">
+              <p class="footer__text">© 2023 - Bản quyền thuộc về Công ty cho thuê xe đạp |  Bicycle Rental</p>
+            </div>
+          </div>
+      </footer>
+    </div>
+
+    <!-- Modal layout -->
+    <!-- <div class="modal">
+      <div class="modal__overlay"></div>
+      
+      <div class="modal__body"> -->
+            <!-- Register form -->
+              <!-- <div class="auth-form">
+                 <div class="auth-form__container">
+                  <div class="auth-form__header">
+                    <h3 class="auth-form__heading">Đăng ký</h3>
+                    <span class="auth-form__switch-btn">Đăng nhập</span>
+                  </div>
+
+                  <div class="auth-form__form">
+                    <div class="auth-form__group">
+                      <input type="text" class="auth-form__input" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="auth-form__group">
+                      <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu của bạn">
+                    </div>
+                    <div class="auth-form__group">
+                      <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                    </div>
+                  </div>
+                  
+                  <div class="auth-form__aside">
+                    <p class="auth-form__policy-text">
+                      Bằng việc đăng ký, bạn đã đồng ý với F8-Shop về
+                      <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                      <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
+                    </p>
+                  </div>
+
+                  <div class="auth-form__controls">
+                    <button class="btn auth-form__controls-back">TRỞ LẠI</button>
+                    <button class="btn btn-primary">ĐĂNG KÝ</button>
+                  </div>
+                 </div>
+
+                  <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials-icon--fb btn btn-size-s btn--with-icon">
+                      <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
+                      <span class="auth-form__socials--title">
+                        Kết nối với Facebook
+                      </span>
+                    </a>
+                    <a href="" class="auth-form__socials-icon--gg btn btn-size-s btn--with-icon">
+                      <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                      <span class="auth-form__socials--title">
+                        Kết nối với Google
+                      </span>
+                    </a>
+                  </div>
+              </div> -->
+
+              <!-- Login form -->
+              <!-- <div class="auth-form">
+                <div class="auth-form__container">
+                 <div class="auth-form__header">
+                   <h3 class="auth-form__heading">Đăng nhập</h3>
+                   <span class="auth-form__switch-btn">Đăng ký</span>
+                 </div>
+
+                 <div class="auth-form__form">
+                   <div class="auth-form__group">
+                     <input type="text" class="auth-form__input" placeholder="Nhập email của bạn">
+                   </div>
+                   <div class="auth-form__group">
+                     <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu của bạn">
+                   </div>
+                 </div>
+                 
+                 <div class="auth-form__aside">
+                   <div class="auth-form__help">
+                      <a href="" class="auth-form__help-link  auth-form__help-forgot">Quên mật khẩu</a>
+                      <span class="auth-form__help-separate"></span>
+                      <a href="" class="auth-form__help-link">Cần trợ giúp?</a> 
+                   </div>
+                 </div>
+
+                 <div class="auth-form__controls">
+                   <button class="btn auth-form__controls-back">TRỞ LẠI</button>
+                   <button class="btn btn-primary">ĐĂNG NHẬP</button>
+                 </div>
+                </div>
+
+                 <div class="auth-form__socials">
+                   <a href="" class="auth-form__socials-icon--fb btn btn-size-s btn--with-icon">
+                     <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
+                     <span class="auth-form__socials--title">
+                       Kết nối với Facebook
+                     </span>
+                   </a>
+                   <a href="" class="auth-form__socials-icon--gg btn btn-size-s btn--with-icon">
+                     <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                     <span class="auth-form__socials--title">
+                       Kết nối với Google
+                     </span>
+                   </a>
+                 </div>
+             </div> -->
+      <!-- </div>
+    </div> -->
+  </body>
+</html>
