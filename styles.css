@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header{
+    background-color: rgb(62, 156, 62);
+    color: #fff;
+    padding: 10px 0;
+    text-align: left;
+
+    
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background-image: url('image/pngtree-cartoon-sports-bike-environmentally-friendly-travel-image_166352.jpg'); /* Thay đổi đường dẫn tới hình nền của bạn */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6; /* Điều chỉnh độ trong suốt của hình ảnh */
+    z-index: -1;
+}
+h1 {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.logo img {
+    width: 50px; /* Điều chỉnh kích thước của logo theo ý muốn */
+
+}
+nav {
+    margin-top: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    margin: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover {
+    color: #666;
+}
+
+#cart {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.total {
+    font-weight: bold;
+}
+
+button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #23bf04;
+}
+/* Trong file CSS (style.css) */
+footer {
+    background-color: #6a6464;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-section h2 {
+    color: #fdfdfd;
+}
+
+.footer-section p {
+    color: #ffffff;
+}
+
+.links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.links li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ffffff;
+}
+

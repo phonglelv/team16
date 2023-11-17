@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-vBb5tFH+09SkC6CC6a4Gj5l2TSFzJcVeu5whgGGmUEVf0kMjbtsDVi1Owox+4GliEfzlQntF5UsqOvMaMKCHwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <title>Giỏ hàng của bạn</title>
+</head>
+
+
+<body>
+    <header>
+        <p>thuexe@gmail.com hotline:090567890</p> 
+        
+        <div class="background-image"></div>
+        <div class="logo">
+            <img src="image/logo.jpg" alt="Logo của bạn">
+        </div>
+        <div class="navigation">
+            
+        <h1>Giỏ hàng của bạn</h1>
+      
+        <nav>
+            <ul>
+                <li><i class="fas fa-home"></i> <a href="#">Trang chủ</a></li>
+                <li><i class="fas fa-shopping-cart"></i> <a href="#">Sản phẩm</a></li>
+                <li><i class="fas fa-folder"></i> <a href="#">Giới thiệu</a></li>
+                <li><i class="fas fa-folder"></i> <a href="#">Giỏ hàng</a></li>
+                <li><i class="fas fa-envelope"></i> <a href="#">Liên hệ</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <div id="cart">
+        <h2>Giỏ hàng</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Tổng cộng</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Các sản phẩm sẽ được thêm vào đây bằng JavaScript -->
+            </tbody>
+        </table>
+        <p class="total">Tổng cộng: <span id="cart-total">0</span> </p>
+        <button onclick="checkout()">Thanh toán</button>
+    </div>
+
+    
+
+  <!-- Trong phần HTML -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h2>Về chúng tôi</h2>
+            <p>Chúng tôi cung cấp những sản phẩm chất lượng...</p>
+        </div>
+
+        <div class="footer-section links">
+            <h2>Liên kết nhanh</h2>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact">
+            <h2>Liên hệ</h2>
+            <p><i class="fa fa-envelope"></i> thuexe@gmail.com</p>
+            <p><i class="fa fa-phone"></i> 090567890</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2023 Trang web của bạn. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
