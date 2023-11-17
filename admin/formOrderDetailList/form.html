@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/sty.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
+    </script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <section id="menu">
+        <div class="logo">
+            <img src="/admin/images/0115300e9e3ebb5933dad09597e33f76.jpg" alt="">
+            <h2>Bicycle rental management</h2>
+        </div>
+            <div class="items">
+                <li><i><i class="fa-solid fa-chart-pie" style="color: #614b8b;"></i></i><a href="#">Dashboard</a></li>
+                <li><i><i class="fa-solid fa-uikit" style="color: #614b8b;"></i></i><a href="#">Customer</a></li>
+                <li><i><i class="fa-solid fa-th-large" style="color: #614b8b;"></i></i><a href="#">Bike</a></li>
+                <li><i><i class="fa-solid fa-edit" style="color: #614b8b;"></i></i><a href="#">Category</a></li>
+                <li><i><i class="fa-solid fa-cc-visa" style="color: #614b8b;"></i></i><a href="#">Order</a></li>
+                <li><i><i class="fa-solid fa-hamburger" style="color: #614b8b;"></i></i><a href="#">OrderDetails</a></li>
+                <li><i><i class="fa-solid fa-hamburger" style="color: #614b8b;"></i></i><a href="#">Payment</a></li>
+                <li><i><i class="fa-solid fa-chart-line" style="color: #614b8b;"></i></i><a href="#">Report</a></li>
+            </div>
+        </div>
+
+       </section>
+
+    
+    
+    
+    
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+
+                <div>
+                    <i id="menu-btn" class="fas fa-bars"></i>
+                </div>
+                <div class="search">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="profile">
+                <i class="fa-solid fa-bell"></i>
+                <img src="/admin/images/1.jpg" alt="">
+            </div>
+        </div>
+
+
+
+        <h3 class="i-name">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home Admin</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Form OrderDetails</li>
+                </ol>
+            </nav>
+            <br>
+            <b class="ml-4">OrderDetail</b>
+        </h3>
+
+        <div class="values">
+            <div class="container">
+                <div class="card-body  p-4">
+                    <form action="" method="post" >
+                    
+                          
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="">Id</label>
+                                    <input type="text" name="bike_name" value="1" class="form-control"> 
+                                </div>
+                               
+                                <div class="form-group">
+                                    <label for="">OrderId</label>
+                                    <div class="input-group mb-3">
+                                
+                                        <input type="text" class="form-control" value="2021-02-02" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                     
+                                      </div>
+                                </div>
+                              
+                                <div class="form-group">
+                                    <label for="">BikeId</label>
+                                    <div class="input-group mb-3">
+                                
+                                        <input type="text" class="form-control" value="2021-02-02" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                     
+                                      </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">RentalPrice</label>
+                                    <div class="input-group mb-3">
+                                
+                                        <input type="text" class="form-control" value="hai01" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                     
+                                      </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Quantity</label>
+                                    <div class="input-group mb-3">
+                                
+                                        <input type="text" class="form-control" value="hai01" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                     
+                                      </div>
+                                </div>
+                            </div>
+                  
+                       
+                         
+                            
+                           <div class="card-footer">
+                           
+                                    <button class="btn btn-outline-primary">Save</button>
+                                    <button class="btn btn-outline-info">Update</button>
+                                    <button class="btn btn-outline-danger">Delete</button>
+                                    <button class="btn btn-outline-secondary ">New</button>
+                                    <button class="btn btn-outline-success ">List Bike</button>
+                                </div>
+                                
+                                    
+                             
+                            </div>
+                              
+
+                              
+                            </div>
+                           
+                        </form>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <script>
+  
+
+
+    </script>
+    <script>
+ $(document).ready(function() {
+    // Toggle dropdown on arrow click
+    $('.arrow-down').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation(); // Prevent event from reaching document level
+        $(this).siblings('.dropdown').toggle();
+    });
+
+    // Prevent dropdown from closing when clicking links inside it
+    $('.dropdown').on('click', 'a', function(e) {
+        e.stopPropagation(); // Stop the event from reaching the document level
+    });
+});
+
+
+
+
+        $('#menu-btn').click(function () {
+            $('#menu').toggleClass("active")
+        })
+    </script>
+</body>
+
+</html>
