@@ -1,0 +1,61 @@
+display flex{
+
+
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header{
+    background-color: rgb(62, 156, 62);
+    color: #fff;
+    padding: 10px 0;
+    text-align: left;
+
+    
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background-image: url('image/pngtree-cartoon-sports-bike-environmentally-friendly-travel-image_166352.jpg'); /* Thay đổi đường dẫn tới hình nền của bạn */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6; /* Điều chỉnh độ trong suốt của hình ảnh */
+    z-index: -1;
+}
+h1 {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.logo img {
+    width: 30px; 
+
+}
+nav {
+    margin-top: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    margin: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
