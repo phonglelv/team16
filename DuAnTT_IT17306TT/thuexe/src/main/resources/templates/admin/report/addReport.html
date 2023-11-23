@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{admin/main-layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <article layout:fragment="content">
+        <h3 class="i-name">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home Admin</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Báo cáo vấn đề </li>
+                </ol>
+            </nav>
+            <br>
+            <b class="ml-4">Báo cáo vấn đề</b>
+        </h3>
+
+        <div class="values">
+            <div class="container">
+                <div class="card-body  p-4">
+                    <form th:action="@{/admin/reports/saveOrUpdate}" method="post" th:object="${report}" >
+                    
+                          
+                            <div class="col-6">
+                                <div class="form-group">
+
+                                    <input type="hidden" name="bike_name" th:field="*{id}"   class="form-control">
+                                </div>
+                               
+                                <div class="form-group">
+                                    <label for="">Tiêu đề báo cáo</label>
+                                    <div class="input-group mb-3">
+                                
+                                        <input type="text" class="form-control" name="reportName" th:field="*{reportName}" value="2021-02-02" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <small class="text-danger" th:if="${#fields.hasErrors('reportName')}" th:errors="*{reportName}"></small>
+                                      </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Username</label>
+                                    <select th:field="*{username}" class="form-control">
+                                        <option th:each="product : ${customers}"
+                                                th:value="${product.username}" th:text="${product.username}"
+                                                th:selected="${product.username == report.id}">
+                                            Name</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">ReportDate</label>
+                                    <div class="input-group mb-3">
+
+                                        <input type="date" class="form-control" name="createDate" th:field="*{createDate}" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <small class="text-danger" th:if="${#fields.hasErrors('createDate')}" th:errors="*{createDate}"></small>
+                                    </div>
+                                </div>
+                                <div class="form-outline">
+                                    <label for="">ReportContent</label>
+                                    <div class="input-group mb-3">
+                                
+                                     <textarea type="text" class="form-control" name="reportContent" th:field="*{reportContent}" cols="5" rows="6"></textarea>
+                                        <small class="text-danger" th:if="${#fields.hasErrors('reportContent')}" th:errors="*{reportContent}"></small>
+                                      </div>
+                                </div>
+
+
+                            </div>
+
+
+
+                        <div class="">
+
+                            <div class="col-8">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-save"></i>
+                                    <span th:if="${report.isEdit}">Sửa</span>
+                                    <span th:unless="${report.isEdit}">Lưu</span>
+                                </button>
+
+                                <button type="reset" class="btn btn-outline-secondary ">Mới</button>
+
+                                <a th:href="@{/admin/reports}" class="btn btn-outline-success ">Danh sách báo cáo</a>
+                            </div>
+
+
+                        </div>
+                                
+                                    
+                             
+                            </div>
+                              
+
+                              
+                            </div>
+                           
+                        </form>
+
+
+                </div>
+            </div>
+        </div>
+    </article>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{admin/main-layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article layout:fragment="content">
+        <h3 class="i-name">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Trang Admin</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Xe đạp</li>
+                </ol>
+            </nav>
+            <br>
+            <b class="ml-4">Bike</b>
+        </h3>
+
+        <div class="values">
+            <div class="container">
+                <div class="card-body  p-4">
+                    <form th:action="@{/admin/bikes/saveOrUpdate}" method="post" th:object="${bike}" >
+                        <div class="row">
+                            <input type="hidden" name="bike_name"  th:field="*{id}"  class="form-control">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="">Tên xe đạp</label>
+                                    <input type="text" name="bike_name" th:field="*{name}"  value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Ảnh xe</label>
+                                    <input type="text" name="bike_name" th:field="*{image}"  value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Giá thuê</label>
+                                    <div class="input-group mb-3">
+                                
+                                        <input type="text" class="form-control"  th:field="*{price}"  placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                          <span class="input-group-text" id="basic-addon2">VNĐ</span>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Thời gian thuê</label>
+                                    <input type="text" name="bike_name" th:field="*{displayPrice}"  value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Trạng thái</label>
+                                    <input type="text" name="bike_name" th:field="*{status}"  value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Ngày tạo SP</label>
+                                    <input type="date" name="bike_name" th:field="*{createDate}"  value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Mô tả</label>
+
+                                    <textarea name="" id="" th:field="*{description}" cols="17" rows="4" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                               <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="">Trọng lượng</label>
+                                        <input type="text" name="bike_name" th:field="*{weight}"  value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                    </div>
+                                </div>
+
+                                   <div class="form-group">
+                                       <label>Username</label>
+                                       <select th:field="*{category}" class="form-control">
+                                           <option th:each="items : ${categories}"
+                                                   th:value="${items.id}" th:text="${items.name}"
+                                                   th:selected="${items.id == bike.name}">
+                                               Name</option>
+
+                                       </select>
+                                   </div>
+                               </div>
+                                <div class="form-group">
+                                    <label for="">Chất Liệu Khung </label>
+                                    <input type="text" name="bike_name" th:field="*{frameMaterial}"  value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Tốc Độ</label>
+                                    <input type="text" name="bike_name" th:field="*{gearsCount}"  value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Loại Phanh </label>
+                                    <input type="text" name="bike_name" th:field="*{brakeSystem}"  value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Kích Cỡ Bánh Xe</label>
+                                    <input type="text" name="bike_name" th:field="*{tireSize}"  value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Lốp Xe</label>
+                                    <input type="text" name="bike_name" th:field="*{wheelType}"  value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="">
+
+                            <div class="col-8">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-save"></i>
+                                    <span th:if="${bike.isEdit}">Sửa</span>
+                                    <span th:unless="${bike.isEdit}">Lưu</span>
+                                </button>
+
+                                <button type="reset" class="btn btn-outline-secondary ">Mới</button>
+
+                                <a th:href="@{/admin/bikes}" class="btn btn-outline-success ">Danh sách xe đạp</a>
+                            </div>
+
+
+                        </div>
+                           
+                        </form>
+
+
+                </div>
+            </div>
+        </div>
+    </article>
+</body>
+</html>

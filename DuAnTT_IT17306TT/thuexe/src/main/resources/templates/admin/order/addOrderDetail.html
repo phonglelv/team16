@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/main-layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<article layout:fragment="content">
+    <h3 class="i-name">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home Admin</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Form Order</li>
+            </ol>
+        </nav>
+        <br>
+        <b class="ml-4">Order</b>
+    </h3>
+
+    <div class="values">
+        <div class="container-fluid">
+            <div class="alert alert-danger" th:if="${error != null}"
+                 role="alert">
+                <i th:text="${error}">[[${error}]]</i>
+            </div>
+            <div class="card-body  p-4">
+                <form th:action="@{/admin/orderdetails/saveOrUpdate}" method="post" th:object="${orderDetail}" >
+                    <div class="row">
+
+                        <div class="col-6">
+                            <div class="form-group">
+
+                                <input type="hidden" name="bike_name"  th:field="*{id}"  class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Giá thuê</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" name="price" th:field="*{price}" placeholder="Giá ??" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <small class="text-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></small>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="form-group">
+                                <label for="">Số lượng</label>
+                                <div class="input-group mb-3">
+
+                                    <input type="text" class="form-control" name="quantity" th:field="*{quantity}" placeholder="Số lư???" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <small class="text-danger" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></small>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Sản phẩm</label>
+                                <select th:field="*{productId}" class="form-control">
+                                    <option th:each="product : ${products}"
+                                            th:value="${product.id}" th:text="${product.name}"
+                                            th:selected="${product.name == orderDetail.id}">
+                                        Name</option>
+
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Mã đơn hàng</label>
+                                <select th:field="*{orderId}" class="form-control">
+                                    <option th:each="product : ${orders}"
+                                            th:value="${product.id}" th:text="${product.id}"
+                                            th:selected="${product.id == orderDetail.id}">
+                                        Name</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6">
+
+                            <div class="form-group">
+                                <label for="">Ngày giao</label>
+                                <div class="input-group mb-3">
+
+                                    <input type="date" class="form-control" name="deliveryDate" th:field="*{deliveryDate}" placeholder="Ngày giao??? " aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <small class="text-danger" th:if="${#fields.hasErrors('deliveryDate')}" th:errors="*{deliveryDate}"></small>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Trạng thái</label>
+                                <div class="input-group mb-3">
+
+                                    <input type="text" class="form-control" name="status" th:field="*{status}" placeholder="Trạng thái??? " aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <small class="text-danger" th:if="${#fields.hasErrors('status')}" th:errors="*{status}"></small>
+                                </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+            </div>
+
+                    </div>
+            </div>
+
+
+
+            <div class="" style="margin-left: 70px;">
+
+                <div class="col-8">
+                    <button class="btn btn-primary">
+                        <i class="fa fa-save"></i>
+                        <span th:if="${orderDetail.isEdit}">Sửa</span>
+                        <span th:unless="${orderDetail.isEdit}">Lưu</span>
+                    </button>
+
+                    <button type="reset" class="btn btn-outline-secondary ">Mới</button>
+
+                    <a th:href="@{/admin/orderdetails}" class="btn btn-outline-success ">Danh sách đơn hàng</a>
+                </div>
+
+
+            </div>
+
+            </form>
+    </div>
+
+        </div>
+    </div>
+    </div>
+</article>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{admin/main-layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article layout:fragment="content">
+        <h3 class="i-name">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/admin">Home Admin</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Loại xe đạp</li>
+                </ol>
+            </nav>
+            <br>
+            <b class="ml-4">Category</b>
+        </h3>
+
+        <div class="alert alert-danger" th:if="${error != null}"
+             role="alert">
+            <i th:text="${error}">[[${error}]]</i>
+        </div>
+        <div class="values">
+            <div class="container">
+                <div class="card-body  p-4">
+                    <form th:action="@{/admin/categories/saveOrUpdate}" method="post" th:object="${category}">
+                       
+                          
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="">Id</label>
+                                    <input type="hidden" name="bike_name" th:field="*{id}" value="1" class="form-control">
+                                </div>
+
+                                <div class="form-outline mb-4" style="position: relative;">
+    <span th:if="${#fields.hasErrors('name')}" class="text-danger " style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
+         <i class="fas fa-exclamation-triangle" style="font-size: 24px;"></i>
+    </span>
+                                    <input type="text" id="username" th:field="*{name}" class="form-control " placeholder="Tên loại xe" style="padding-right: 30px;" />
+                                </div>
+                              
+                              
+                                <hr style="border: 1px solid black; width: 500px;">
+                            
+                        </div>
+                       
+                         
+                            
+                           <div class="">
+                           
+                                <div class="col-8">
+                                    <button class="btn btn-primary">
+                                        <i class="fa fa-save"></i>
+                                        <span th:if="${category.isEdit}">Sửa</span>
+                                        <span th:unless="${category.isEdit}">Lưu</span>
+                                    </button>
+
+                                    <button type="reset" class="btn btn-outline-secondary ">Mới</button>
+
+                                    <a th:href="@{/admin/categories}" class="btn btn-outline-success ">Danh sách loại xe</a>
+                                </div>
+                         
+                                
+                            </div>
+                              
+
+                              
+                            </div>
+                           
+                        </form>
+
+
+                </div>
+            </div>
+    </article>
+</body>
+</html>

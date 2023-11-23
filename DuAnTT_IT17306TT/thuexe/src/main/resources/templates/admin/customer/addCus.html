@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{admin/main-layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article layout:fragment="content">
+        <h3 class="i-name">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/admin">Trang chủ Admin</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Khách hàng</li>
+                </ol>
+            </nav>
+            <br>
+            <b class="ml-4">Customer</b>
+        </h3>
+
+        <div class="values">
+            <div class="container-fluid">
+                <div class="alert alert-danger" th:if="${error != null}"
+                     role="alert">
+                    <i th:text="${error}">[[${error}]]</i>
+                </div>
+                <div class="card-body  p-4">
+                    <form th:action="@{/admin/customers/saveOrUpdate}" method="post" th:object="${customer}" >
+                        <input type="hidden" name="bike_name" th:field="*{username}" value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                        <input type="hidden" class="form-control" value="250.000" th:field="*{password}" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="row">
+                          
+                            <div class="col-6">
+
+                                <div class="form-group">
+                                    <label for="fullname">Họ và tên</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" id="fullname" name="fullname" th:field="*{fullname}" placeholder="Họ và tên" aria-label="fullname" aria-describedby="basic-addon2">
+                                    </div>
+                                    <small class="text-danger" th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}"></small>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="fullname">Số điện thoại</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" id="phone" name="phone" th:field="*{phone}" placeholder="Số điện thoại" aria-label="Họ và tên" aria-describedby="basic-addon2">
+                                    </div>
+                                    <small class="text-danger" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></small>
+                                </div>
+
+
+
+                            </div>
+                            <div class="col-6">
+
+                                <div class="form-group">
+                                    <label for="address">Địa chỉ</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" id="address" name="address" th:field="*{address}" placeholder="Địa chỉ" aria-label="Họ và tên" aria-describedby="basic-addon2">
+                                    </div>
+                                    <small class="text-danger" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" id="email" name="email" th:field="*{email}" placeholder="Email??" aria-label="Họ và tên" aria-describedby="basic-addon2">
+                                    </div>
+                                    <small class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
+                                </div>
+                              
+                  
+     
+
+                     
+                           
+                             
+                            </div>
+                        </div>
+
+
+
+                        <div class="">
+
+                            <div class="col-8">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-save"></i>
+                                    <span th:if="${customer.isEdit}">Sửa</span>
+                                    <span th:unless="${customer.isEdit}">Lưu</span>
+                                </button>
+
+                                <button type="reset" class="btn btn-outline-secondary ">Mới</button>
+
+                                <a th:href="@{/admin/customers}" class="btn btn-outline-success ">Danh sách khách hàng</a>
+                            </div>
+
+
+                        </div>
+                           
+                        </form>
+
+
+                </div>
+            </div>
+        </div>
+    </article>
+</body>
+</html>

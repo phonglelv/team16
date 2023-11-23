@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{admin/main-layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article layout:fragment="content">
+    <h3 class="i-name">
+        Bảng điều khiển 
+    </h3>
+    <div class="values">
+        <div class="val-box">
+            <i class="fas fa-users"></i>
+            <div>
+
+                <span>Người dùng đăng ký   <h3 th:text="${registeredUsersCount}"></h3></span>
+
+            </div>
+        </div>
+
+        <div class="val-box">
+            <i class="fas fa-shopping-cart"></i>
+            <div>
+
+                <span>Tổng giá đơn hàng: <h3 th:text="${#numbers.formatDecimal(totalOrderAmount, 0, 'COMMA', 0, 'POINT')}"></h3></span>
+                
+            </div>
+        </div>
+      
+        <div class="val-box">
+            <i class="fas fa-dollar-sign"></i>
+            <div>
+
+                <span>Vấn để báo cáo:  <h3 th:text="${registeredReportsCount}"></h3></span>
+                
+            </div>
+        </div>
+    </div> 
+    <div class="board">
+        <table width="100%">
+                  <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Title</td>
+                        <td>Status</td>
+                        <td>Role</td>
+                        <td></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td class="people">
+                            <img src="/images/1.jpg" alt="">
+                            <div class="people-de">
+                                <h5>John Doe</h5>
+                                <p>john@gmal.com</p>
+                            </div>
+                        </td>
+                        <td class="people-des">
+                            <h5>Software Engineer</h5>
+                            <p>Web dev</p>
+                              
+                        </td>
+                        <td class="active"><p>Active</p></td>
+                        <td class="role">
+                            <p>Owner</p>
+                        </td>
+                        <td class="edit">
+                            <a href="#">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="people">
+                            <img src="/images/1.jpg" alt="">
+                            <div class="people-de">
+                                <h5>John Doe</h5>
+                                <p>john@gmal.com</p>
+                            </div>
+                        </td>
+                        <td class="people-des">
+                            <h5>Software Engineer</h5>
+                            <p>Web dev</p>
+                              
+                        </td>
+                        <td class="active"><p>Active</p></td>
+                        <td class="role">
+                            <p>Owner</p>
+                        </td>
+                        <td class="edit">
+                            <a href="#">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="people">
+                            <img src="/images/2.jpg" alt="">
+                            <div class="people-de">
+                                <h5>John Doe</h5>
+                                <p>john@gmal.com</p>
+                            </div>
+                        </td>
+                        <td class="people-des">
+                            <h5>Software Engineer</h5>
+                            <p>Web dev</p>
+                              
+                        </td>
+                        <td class="active"><p>Active</p></td>
+                        <td class="role">
+                            <p>Owner</p>
+                        </td>
+                        <td class="edit">
+                            <a href="#">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="people">
+                            <img src="/images/3.jpg" alt="">
+                            <div class="people-de">
+                                <h5>John Doe</h5>
+                                <p>john@gmal.com</p>
+                            </div>
+                        </td>
+                        <td class="people-des">
+                            <h5>Software Engineer</h5>
+                            <p>Web dev</p>
+                              
+                        </td>
+                        <td class="active"><p>Active</p></td>
+                        <td class="role">
+                            <p>Owner</p>
+                        </td>
+                        <td class="edit">
+                            <a href="#">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="people">
+                            <img src="/images/4.jpg" alt="">
+                            <div class="people-de">
+                                <h5>John Doe</h5>
+                                <p>john@gmal.com</p>
+                            </div>
+                        </td>
+                        <td class="people-des">
+                            <h5>Software Engineer</h5>
+                            <p>Web dev</p>
+                              
+                        </td>
+                        <td class="active"><p>Active</p></td>
+                        <td class="role">
+                            <p>Owner</p>
+                        </td>
+                        <td class="edit">
+                            <a href="#">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="people">
+                            <img src="/images/5.jpg" alt="">
+                            <div class="people-de">
+                                <h5>John Doe</h5>
+                                <p>john@gmal.com</p>
+                            </div>
+                        </td>
+                        <td class="people-des">
+                            <h5>Software Engineer</h5>
+                            <p>Web dev</p>
+                              
+                        </td>
+                        <td class="active"><p>Active</p></td>
+                        <td class="role">
+                            <p>Owner</p>
+                        </td>
+                        <td class="edit">
+                            <a href="#">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="people">
+                            <img src="/images/6.jpg" alt="">
+                            <div class="people-de">
+                                <h5>John Doe</h5>
+                                <p>john@gmal.com</p>
+                            </div>
+                        </td>
+                        <td class="people-des">
+                            <h5>Software Engineer</h5>
+                            <p>Web dev</p>
+                              
+                        </td>
+                        <td class="active"><p>Active</p></td>
+                        <td class="role">
+                            <p>Owner</p>
+                        </td>
+                        <td class="edit">
+                            <a href="#">Edit</a>
+                        </td>
+                    </tr>
+                  </tbody>
+        </table>
+    </div>
+    </article>
+</body>
+</html>
