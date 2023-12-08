@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{user/layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên Hệ </title>
+  <link rel="stylesheet" href="/assets/css/contact.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+<article layout:fragment="content">
+
+
+  <!-- Code của mHy -->
+  <!-- <div class="content d-flex col-12 mt-3">
+      <div class="information col-5 pl-5">
+          <h1 class="ml-0 pl-5">Thông tin liên hệ</h1>
+          <p class="pl-5"> Địa chỉ: 137 Nguyễn Thị Thập, Phường Hòa Minh, TP Đà Nẵng </p>
+          <p class="pl-5"> Hotline: 0905 678 910 </p>
+          <p class="pl-5"> Email: thuexedapgiatot@gmail.com</p>
+          <p class="pl-5"> Website: https://thuexedapgiatot.vn/ </p>
+      </div>
+      <div class="formsp col-7">
+          <h1 class="ml-0">Hỗ trợ khách hàng</h1>
+          <input type="text" name="" id="" class="col-6 mb-2" placeholder="Họ và tên">
+          <br>
+          <input type="text" name="email" id="email" class="col-6 mb-2" placeholder="Email">
+          <br>
+          <input type="text" name="phone" id="phone" class="col-6 mb-2" placeholder="Số điện thoại">
+          <br>
+          <textarea name="description" id="description" cols="30" rows="10" class="col-6 mb-2" placeholder="Nội dung"></textarea>
+          <br>
+          <button type="button" class="btn btn-success" onclick="checkout()">Gửi tin nhắn</button>
+      </div>
+  </div> -->
+  <section class="contact">
+    <div class="content">
+      <h2>Thông tin liên hệ</h2>
+    </div>
+    <div class="container">
+      <div class="contactInfo">
+        <div class="box">
+          <div class="b-icon"><i class="box-ic fa-solid fa-location-dot"></i></div>
+          <div class="text">
+            <h3>Địa chỉ: </h3>
+            <p>116 Nguyễn Huy Tưởng</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="b-icon"><i class="box-ic fa-solid fa-phone"></i></div>
+          <div class="text">
+            <h3>Số điện thoại:</h3>
+            <p>0905 566 789</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="b-icon"><i class="box-ic fa-solid fa-envelope"></i></div>
+          <div class="text">
+            <h3>Email: </h3>
+            <p>thuexedapgiatot@gmail.com</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="b-icon"><i class="box-ic fa-solid fa-earth-americas"></i></div>
+          <div class="text">
+            <h3>Website: </h3>
+            <p>https://thuexedapgiatot.vn/</p>
+          </div>
+        </div>
+      </div>
+      <div class="contactForm">
+        <form action="">
+          <h2 class="sp-kh">Hỗ Trợ Khách Hàng</h2>
+          <div class="form-group">
+            <div class="">
+              <label>Họ và tên: </label>
+              <input type="text" name="" class="form-control" required="required">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="">
+              <label>Email </label>
+              <input type="email" name="" class="form-control" required="required">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="">
+              <label>Số điện thoại </label>
+              <input type="text" name="" class="form-control" required="required">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="">
+              <label>Nội dung: </label>
+              <textarea type="text" style="margin-left: 20px;" name="" cols="12" rows="7" class="form-control" required="required" ></textarea>
+            </div>
+          </div>
+
+          <div class="inputBox">
+            <input type="submit" name="" value="Gửi tin nhắn">
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
+
+</article>
+  <!-- Code của mHy -->
+
+</div>
+
+</body>
+
+</html>

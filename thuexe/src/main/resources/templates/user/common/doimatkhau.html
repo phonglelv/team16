@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{user/layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/ttcn.css"/>
+<title>Đổi mật khẩu</title>
+    <title> Đăng ký</title>
+</head>
+
+<body >
+
+  <article layout:fragment="content" >
+
+
+      <div class="app">
+
+
+          <div class="app__container">
+              <!-- Thêm mã HTML để hiển thị thông báo lỗi -->
+              <div class="alert alert-primary" th:if="${message != null}" role="alert">
+                  <i th:text="${message}">[[${message}]]</i>
+              </div>
+              <div class="alert alert-danger" th:if="${error != null}" role="alert">
+                  <i th:text="${error}">[[${error}]]</i>
+              </div>
+              <div class="grid user-container">
+                  <div class="user-file">
+                      <div class="us-ac-img">
+                          <div class="us-img">
+                              <img src="/assets/images/user.jpg" alt="" class="user-file_img">
+                              <p>Hình ảnh</p>
+                          </div>
+                          <div class="us-account">
+                              <span>Tên tài khoản</span>
+                              <p><i class="icon-us fa-solid fa-pen"></i>  Sửa hồ sơ</p>
+                          </div>
+                      </div>
+                      <div class="us-list">
+                          <strong><i class="icon-us fa-solid fa-user"></i> Tài khoản của tôi</strong>
+                          <p><a href="/customer/profile" style="text-decoration: none;">Hồ sơ</a></p>
+                          <p><a href="/customer/doimatkhau" style="text-decoration: none;">Đổi mật khẩu</a></p>
+                          <p><a href="/password-request" style="text-decoration: none;">Quên mật khẩu</a></p>
+                          <strong><i class="icon-us fa-solid fa-bag-shopping"></i> Đơn mua</strong>
+                          <p><a href="/order/list" style="text-decoration: none;">Đơn hàng của tôi</a></p>
+                          </p>
+                          <strong><i class="icon-us fa-solid fa-bell"></i>Báo cáo vấn đề</strong>
+                          <p>Báo cáo</p>
+                          <p>Danh sách báo cáo</p>
+                      </div>
+
+                  </div>
+                  <div class="user-list">
+                      <div class="us-title">
+                          <span>Hồ sơ của tôi</span>
+                          <p>Quản lí thông tin hồ sơ để bảo mật tài khoản</p>
+                      </div>
+                      <div class="us-form">
+                          <div class="us-form-ip">
+                              <!-- Hiển thị thông báo lỗi nếu có -->
+                     
+
+                              <form th:action="@{/customer/doimatkhau}" method="post">
+                           
+                            
+                                <label for="oldPassword">Mật khẩu hiện tại:</label>
+                                <input type="password" id="oldPassword" name="oldPassword" required>
+                            
+                                <label for="newPassword">Mật khẩu mới:</label>
+                                <input type="password" id="newPassword" name="newPassword" required>
+                            
+                                <label for="confirmPassword">Nhập lại mật khẩu mới:</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            
+                                <button type="submit" class="btn-f">Đổi mật khẩu</button>
+                            </form>
+
+                          </div>
+                          <div class="us-img-form">
+                              <img src="./img-x.jpg" alt="" class="us-f-img">
+                              <p>Chọn ảnh</p>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+
+    
+</article>
+
+    
+    </body>
+</html>
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{admin/main-layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng điều khiển</title>
+</head>
+<body>
+    <article layout:fragment="content">
+    <h3 class="i-name1" >
+        Bảng điều khiển 
+    </h3>
+    <div class="values" >
+        <div class="val-box">
+            <i class="fas fa-users"></i>
+            <div>
+
+                <span>Người dùng đăng ký   <h3 th:text="${registeredUsersCount}"></h3></span>
+
+            </div>
+        </div>
+
+        <div class="val-box">
+            <i class="fas fa-shopping-cart"></i>
+            <div>
+
+                <span>Tổng giá đơn hàng: <h3 th:text="${#numbers.formatDecimal(totalOrderAmount, 0, 'COMMA', 0, 'POINT')}"></h3></span>
+                
+            </div>
+        </div>
+      
+        <div class="val-box">
+            <i class="fas fa-dollar-sign"></i>
+            <div>
+
+                <span>Vấn để báo cáo:  <h3 th:text="${registeredReportsCount}"></h3></span>
+                
+            </div>
+        </div>
+    </div> 
+
+
+    </article>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{user/layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sản phẩm</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />  
+</head>
+
+<body>
+
+<article layout:fragment="content">
+    <div class="grid">
+
+        <div class="item" style="margin-top: 180px;">
+            <div class="item__product">
+                <h3>Sản phẩm </h3>
+                <span>THỜI TRANG - GIÁ RẺ - DEAL SỐC</span>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="grid__row app__content">
+            <div class="grid__column-2">
+                <nav class="category" style="background-color: white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                            <h3 class="category__heading" ><i class="fa-solid fa-bars"></i> Danh Mục</h3>
+                        </a>
+                        <a th:each="c:${cates}" th:href="@{|/product/list?cid=${c.id}|}" class="list-group-item list-group-item-action">[[${c.name}]]</a>
+                    </div>
+                </nav>
+
+
+            </div>
+        
+            <div class="grid__column-10">
+                <div class="home-product">
+                    <div class="grid-row" >
+                        <div class="grid-column-2-4" th:each="product : ${page.content}">
+                            <!-- Product item: Danh sách các sản phẩm  -->
+
+                            <a class="home-product-item" href="#">
+                                <a th:href="@{|/product/detail/${product.id}|}">
+                                    <img th:src="@{|/assets/images/${product.image}|}" class="img-fluid">
+                                </a>
+
+
+
+                            </a>
+                            <div class="home-product-item__price">
+                                <h4 class="" th:text="${product.name}"></h4>
+                                <div class="home-product-item__price-pr">
+                                    <span th:text="${#numbers.formatDecimal(product.price,0,'POINT',0,'POINT')}"></span> VNĐ
+                                </div>
+
+                                <div class="home-product-item__day" >Mức thời gian [[${product.displayPrice}]]</div>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+             <!-- Debug: Display page number and total pages -->
+
+
+                <ul class="pagination home-product__pagination">
+                    <!-- Previous Page -->
+
+                    <li class="pagination-item" th:class="${page.number == 0 ? 'disabled' : ''}">
+                        <a class="pagination-item__link" th:href="@{|/product/list?p=${page.number == 0 ? 0 : page.number - 1}|}" aria-label="Previous">
+                            <i class="pagination-item__icon fa-solid fa-angle-left"></i>
+                        </a>
+                    </li>
+
+
+
+                    <!-- Page Numbers -->
+                    <li th:each="pageNumber : ${#numbers.sequence(1, page.totalPages)}"
+                        th:class="${page.number == pageNumber - 1 ? 'pagination-item pagination-item--active' : 'pagination-item'}">
+                        <a class="pagination-item__link" th:href="@{|/product/list?p=${pageNumber - 1}|}" th:text="${pageNumber}"></a>
+                    </li>
+
+                    <!-- Ellipsis -->
+                    <li class="pagination-item" th:if="${page.totalPages > 5}">
+                        <a href="" class="pagination-item__link">...</a>
+                    </li>
+
+                    <!-- Last Page -->
+                    <!-- Last Page -->
+                    <li class="pagination-item" th:class="${page.number == page.totalPages - 1 ? 'disabled' : ''}">
+                        <a class="pagination-item__link" th:href="@{|/product/list?p=${page.number == page.totalPages - 1 ? page.number : page.number + 1}|}" aria-label="Next">
+                            <i class="pagination-item__icon fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="heading__partner">
+            <span>Các đối tác của Bicycle Rental</span>
+            <h3>CHÚNG TÔI VINH DỰ KHI ĐƯỢC CÁC THƯƠNG HIỆU HÀNG ĐẦU THẾ GIỚI CHỌN LÀM ĐỐI TÁC CHIẾN LƯỢC TẠI VIỆT NAM</h3>
+            <div class="img__partner">
+                <a href="https://xedap24h.vn/xe-dap-the-thao/xe-dap-trinx/">
+                    <img src="https://bizweb.dktcdn.net/thumb/medium/100/066/626/themes/735189/assets/brand1.png?1698293761375" alt="">
+                </a>
+                <a href="https://giantvietnam.vn/">
+                    <img src="https://bizweb.dktcdn.net/thumb/medium/100/066/626/themes/735189/assets/brand2.png?1698293761375" alt="">
+                </a>
+                <a href="https://dngbike.com/xe-dap-twitter">
+                    <img src="https://bizweb.dktcdn.net/thumb/medium/100/066/626/themes/735189/assets/brand4.png?1698293761375" alt="">
+                </a>
+                <a href="https://giantvietnam.vn/product-category/mau-xe/liv/">
+                    <img src="https://bizweb.dktcdn.net/thumb/medium/100/066/626/themes/735189/assets/brand3.png?1698293761375" alt="">
+                </a>
+                <a href="https://dngbike.com/search?query=shimano">
+                    <img src="https://bizweb.dktcdn.net/thumb/medium/100/066/626/themes/735189/assets/brand6.png?1698293761375" alt="">
+                </a>
+            </div>
+        </div>
+
+    </div>
+</article>
+</body>
+</html>

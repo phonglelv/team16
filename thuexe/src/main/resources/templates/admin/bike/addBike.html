@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{admin/main-layout}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article layout:fragment="content">
+        <h3 class="i-name">
+
+            <br>
+            <b class="ml-4">Xe Đạp</b>
+        </h3>
+
+        <div class="values">
+            <div class="container">
+                <div class="card-body  p-4">
+                    <form th:action="@{/admin/bikes/saveOrUpdate}" method="post" th:object="${bike}" enctype="multipart/form-data" >
+                        <div class="row">
+                            <input type="hidden" name="id" th:field="*{id}" class="form-control">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="">Tên xe đạp</label>
+                                    <input type="text" name="name" th:field="*{name}" value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                </div>
+                
+                                <div class="col-7">
+                                    <img id="image"  src="/images/login.svg"  width="90%"
+                                        class="img-fluid" alt="">
+                                    <div class="form-group">
+                                        <label for="productImage">File ảnh</label> <input th:field="*{imageFile}"
+                                            onchange="chooseFiles(this)" type="file"
+                                            class="form-control-file"  
+                                            id="productImage" placeholder="Image File"
+                                            aria-describedby="imageFile" />
+                                            <span th:if="${bike.isEdit}"><input type="text" name="name" th:field="*{image}" value="" class="form-control"></span>  
+                                    </div>
+
+
+                                    <!-- Đoạn mã JavaScript -->
+                                    <script>
+                                        function chooseFiles(
+                                                fileInput) {
+                                            if (fileInput.files
+                                                    && fileInput.files[0]) {
+                                                var reader = new FileReader();
+
+                                                reader.onload = function(
+                                                        e) {
+                                                    document
+                                                            .getElementById('image').src = e.target.result;
+                                                }
+
+                                                reader
+                                                        .readAsDataURL(fileInput.files[0]);
+                                            }
+                                        }
+                                    </script>
+                                    
+                                </div>
+                                
+                                   
+                                
+
+                                
+                                <div class="form-group">
+                                    <label for="">Thời gian thuê</label>
+                                    <input type="text" name="displayPrice" th:field="*{displayPrice}" value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                </div>
+
+                                
+                            </div>
+                            <div class="col-6">
+
+                                    <div class="form-group col-6">
+                                        <label>Trạng thái</label>
+                                    <select name="status" id="status" th:field="*{status}" class="form-control">
+                                        <option value="Sẵn sàng cho thuê">Sẵn sàng cho thuê</option>
+                                        <option value="Đã thuê">Đã thuê</option>
+                                        <!-- Thêm các trạng thái khác nếu cần -->
+                                    </select>
+                                    </div>
+
+                                    <div class="form-group col-6">
+                                        <label>Loại xe</label>
+                                        <select th:field="*{category}" class="form-control">
+                                            <option th:each="items : ${categories}" th:value="${items.id}" th:text="${items.name}" th:selected="${items.id == bike.id}">Name</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="">Ngày tạo SP</label>
+                                        <input type="date" name="createDate" th:field="*{createDate}" value="Xe đạp gấp đôi 21 tốc độ" class="form-control">
+                                    </div>
+
+                                <div class="form-group col-6">
+                                    <label for="">Giá thuê</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" th:field="*{price}" placeholder="Nhập giá xe" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon2">VNĐ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+
+                            <div class="form-group col-9">
+                                <label for="">Mô tả</label>
+                                <textarea name="description" th:field="*{description}" cols="50" rows="4" class="form-control"></textarea>
+                            </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-8">
+                            <button class="btn btn-primary">
+                                <i class="fa fa-save"></i>
+                                <span th:if="${bike.isEdit}">Sửa</span>
+                                <span th:unless="${bike.isEdit}">Lưu</span>
+                            </button>
+
+                            <button type="reset" class="btn btn-outline-secondary ">Mới</button>
+
+                            <a th:href="@{/admin/bikes}" class="btn btn-outline-success ">Danh sách xe đạp</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+         
+    </article>
+
+  
+</body>
+</html>
